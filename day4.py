@@ -39,7 +39,6 @@ def decyrpt(x) -> str:
     string = x[:pos-4].replace('-',' ').upper()
     
     shift = int(chunks[-1])
-    print(string)
     new_string = ''
     for c in string:
         if c in alpha:
@@ -48,5 +47,8 @@ def decyrpt(x) -> str:
             new_string+=' '
     return new_string
 
-
-print(decyrpt("qzmt-zixmtkozy-ivhz-343"))
+# print(decyrpt("qzmt-zixmtkozy-ivhz-343[stuff]"))
+for line in d.splitlines():
+    name = decyrpt(line)
+    if 'NORTHPOLE' in name:
+        print(''.join([x for x in line if x.isdigit()]))
