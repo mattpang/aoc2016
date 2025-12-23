@@ -14,18 +14,11 @@ def solve(code, part2=False):
     # code = 'qzthpkfp'
     stack = [[0, code, start]]
 
-    if part2:
-        heapq.heapify(stack)
-        # stack is going to be: steps, seq , pos
-        heapq._heapify_max(stack)
-
     biggest = 0
 
     while len(stack) > 0:
-        if part2:
-            steps, seq, pos = heapq._heappop_max(stack)
-        else:
-            steps, seq, pos = heapq.heappop(stack)
+
+        steps, seq, pos = heapq.heappop(stack)
 
         if pos == target:
             if part2:
